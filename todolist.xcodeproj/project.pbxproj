@@ -18,6 +18,11 @@
 		FF5609EB16D696EF0044DBC2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF5609EA16D696EF0044DBC2 /* Default@2x.png */; };
 		FF5609ED16D696EF0044DBC2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF5609EC16D696EF0044DBC2 /* Default-568h@2x.png */; };
 		FF5609F016D696EF0044DBC2 /* todolist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF5609EE16D696EF0044DBC2 /* todolist.xcdatamodeld */; };
+		FF5609F716D6975C0044DBC2 /* todo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5609F616D6975B0044DBC2 /* todo.storyboard */; };
+		FF5609FA16D6977A0044DBC2 /* FirstTab.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5609F916D6977A0044DBC2 /* FirstTab.m */; };
+		FF560A0016D6A8DD0044DBC2 /* SecondTab.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5609FF16D6A8DC0044DBC2 /* SecondTab.m */; };
+		FF560A0316D6A8E70044DBC2 /* ThirdTab.m in Sources */ = {isa = PBXBuildFile; fileRef = FF560A0216D6A8E70044DBC2 /* ThirdTab.m */; };
+		FF560A0616D6C78F0044DBC2 /* AddTask.m in Sources */ = {isa = PBXBuildFile; fileRef = FF560A0516D6C78F0044DBC2 /* AddTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,15 @@
 		FF5609EA16D696EF0044DBC2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FF5609EC16D696EF0044DBC2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FF5609EF16D696EF0044DBC2 /* todolist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = todolist.xcdatamodel; sourceTree = "<group>"; };
+		FF5609F616D6975B0044DBC2 /* todo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = todo.storyboard; sourceTree = "<group>"; };
+		FF5609F816D6977A0044DBC2 /* FirstTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTab.h; sourceTree = "<group>"; };
+		FF5609F916D6977A0044DBC2 /* FirstTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTab.m; sourceTree = "<group>"; };
+		FF5609FE16D6A8DC0044DBC2 /* SecondTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTab.h; sourceTree = "<group>"; };
+		FF5609FF16D6A8DC0044DBC2 /* SecondTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTab.m; sourceTree = "<group>"; };
+		FF560A0116D6A8E70044DBC2 /* ThirdTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdTab.h; sourceTree = "<group>"; };
+		FF560A0216D6A8E70044DBC2 /* ThirdTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdTab.m; sourceTree = "<group>"; };
+		FF560A0416D6C78F0044DBC2 /* AddTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTask.h; sourceTree = "<group>"; };
+		FF560A0516D6C78F0044DBC2 /* AddTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +98,17 @@
 		FF5609DC16D696EF0044DBC2 /* todolist */ = {
 			isa = PBXGroup;
 			children = (
+				FF560A0416D6C78F0044DBC2 /* AddTask.h */,
+				FF560A0516D6C78F0044DBC2 /* AddTask.m */,
 				FF5609E516D696EF0044DBC2 /* AppDelegate.h */,
 				FF5609E616D696EF0044DBC2 /* AppDelegate.m */,
+				FF5609F616D6975B0044DBC2 /* todo.storyboard */,
+				FF5609F816D6977A0044DBC2 /* FirstTab.h */,
+				FF5609F916D6977A0044DBC2 /* FirstTab.m */,
+				FF5609FE16D6A8DC0044DBC2 /* SecondTab.h */,
+				FF5609FF16D6A8DC0044DBC2 /* SecondTab.m */,
+				FF560A0116D6A8E70044DBC2 /* ThirdTab.h */,
+				FF560A0216D6A8E70044DBC2 /* ThirdTab.m */,
 				FF5609EE16D696EF0044DBC2 /* todolist.xcdatamodeld */,
 				FF5609DD16D696EF0044DBC2 /* Supporting Files */,
 			);
@@ -161,6 +184,7 @@
 				FF5609E916D696EF0044DBC2 /* Default.png in Resources */,
 				FF5609EB16D696EF0044DBC2 /* Default@2x.png in Resources */,
 				FF5609ED16D696EF0044DBC2 /* Default-568h@2x.png in Resources */,
+				FF5609F716D6975C0044DBC2 /* todo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +198,10 @@
 				FF5609E316D696EF0044DBC2 /* main.m in Sources */,
 				FF5609E716D696EF0044DBC2 /* AppDelegate.m in Sources */,
 				FF5609F016D696EF0044DBC2 /* todolist.xcdatamodeld in Sources */,
+				FF5609FA16D6977A0044DBC2 /* FirstTab.m in Sources */,
+				FF560A0016D6A8DD0044DBC2 /* SecondTab.m in Sources */,
+				FF560A0316D6A8E70044DBC2 /* ThirdTab.m in Sources */,
+				FF560A0616D6C78F0044DBC2 /* AddTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
