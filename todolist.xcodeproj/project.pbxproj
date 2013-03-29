@@ -23,6 +23,8 @@
 		FF560A0016D6A8DD0044DBC2 /* SecondTab.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5609FF16D6A8DC0044DBC2 /* SecondTab.m */; };
 		FF560A0316D6A8E70044DBC2 /* ThirdTab.m in Sources */ = {isa = PBXBuildFile; fileRef = FF560A0216D6A8E70044DBC2 /* ThirdTab.m */; };
 		FF560A0616D6C78F0044DBC2 /* AddTask.m in Sources */ = {isa = PBXBuildFile; fileRef = FF560A0516D6C78F0044DBC2 /* AddTask.m */; };
+		FFC7631916DA9AD600B5DC98 /* ClearTask.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC7631816DA9AD600B5DC98 /* ClearTask.m */; };
+		FFC7631B16DAB75400B5DC98 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FFC7631A16DAB75400B5DC98 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,10 @@
 		FF560A0216D6A8E70044DBC2 /* ThirdTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdTab.m; sourceTree = "<group>"; };
 		FF560A0416D6C78F0044DBC2 /* AddTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTask.h; sourceTree = "<group>"; };
 		FF560A0516D6C78F0044DBC2 /* AddTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTask.m; sourceTree = "<group>"; };
+		FF92CF5016FC71DB00D98BE4 /* control */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
+		FFC7631716DA9AD500B5DC98 /* ClearTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearTask.h; sourceTree = "<group>"; };
+		FFC7631816DA9AD600B5DC98 /* ClearTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearTask.m; sourceTree = "<group>"; };
+		FFC7631A16DAB75400B5DC98 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +104,15 @@
 		FF5609DC16D696EF0044DBC2 /* todolist */ = {
 			isa = PBXGroup;
 			children = (
+				FF92CF4C16FC71DB00D98BE4 /* Package */,
 				FF560A0416D6C78F0044DBC2 /* AddTask.h */,
 				FF560A0516D6C78F0044DBC2 /* AddTask.m */,
 				FF5609E516D696EF0044DBC2 /* AppDelegate.h */,
 				FF5609E616D696EF0044DBC2 /* AppDelegate.m */,
 				FF5609F616D6975B0044DBC2 /* todo.storyboard */,
+				FFC7631A16DAB75400B5DC98 /* Settings.bundle */,
+				FFC7631716DA9AD500B5DC98 /* ClearTask.h */,
+				FFC7631816DA9AD600B5DC98 /* ClearTask.m */,
 				FF5609F816D6977A0044DBC2 /* FirstTab.h */,
 				FF5609F916D6977A0044DBC2 /* FirstTab.m */,
 				FF5609FE16D6A8DC0044DBC2 /* SecondTab.h */,
@@ -129,6 +139,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FF92CF4C16FC71DB00D98BE4 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				FF92CF4D16FC71DB00D98BE4 /* Applications */,
+				FF92CF4F16FC71DB00D98BE4 /* DEBIAN */,
+			);
+			path = Package;
+			sourceTree = "<group>";
+		};
+		FF92CF4D16FC71DB00D98BE4 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		FF92CF4F16FC71DB00D98BE4 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				FF92CF5016FC71DB00D98BE4 /* control */,
+			);
+			path = DEBIAN;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +173,7 @@
 				FF5609CD16D696EF0044DBC2 /* Sources */,
 				FF5609CE16D696EF0044DBC2 /* Frameworks */,
 				FF5609CF16D696EF0044DBC2 /* Resources */,
+				FF92CF5316FC723F00D98BE4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -185,10 +220,27 @@
 				FF5609EB16D696EF0044DBC2 /* Default@2x.png in Resources */,
 				FF5609ED16D696EF0044DBC2 /* Default-568h@2x.png in Resources */,
 				FF5609F716D6975C0044DBC2 /* todo.storyboard in Resources */,
+				FFC7631B16DAB75400B5DC98 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FF92CF5316FC723F00D98BE4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF5609CD16D696EF0044DBC2 /* Sources */ = {
@@ -202,6 +254,7 @@
 				FF560A0016D6A8DD0044DBC2 /* SecondTab.m in Sources */,
 				FF560A0316D6A8E70044DBC2 /* ThirdTab.m in Sources */,
 				FF560A0616D6C78F0044DBC2 /* AddTask.m in Sources */,
+				FFC7631916DA9AD600B5DC98 /* ClearTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +284,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -248,6 +302,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
+				iOSOpenDevPath = /opt/iOSOpenDev;
 			};
 			name = Debug;
 		};
@@ -263,7 +318,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -274,6 +330,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
 			};
 			name = Release;
 		};
@@ -285,6 +342,13 @@
 				INFOPLIST_FILE = "todolist/todolist-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = 192.168.1.101;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = NO;
 			};
 			name = Debug;
 		};
@@ -296,6 +360,13 @@
 				INFOPLIST_FILE = "todolist/todolist-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = 192.168.1.101;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = NO;
 			};
 			name = Release;
 		};
@@ -318,6 +389,7 @@
 				FF5609F516D696EF0044DBC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

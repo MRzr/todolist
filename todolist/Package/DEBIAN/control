@@ -1,0 +1,17 @@
+Package: com.QuantumLabs.TODOList
+Name: TODOList
+Version: 0.1-1
+Description: 
+Section: System
+Depends: preferenceloader
+Conflicts: 
+Replaces: 
+Priority: optional
+Architecture: iphoneos-arm
+Author: Matt Razor
+dev: 
+Homepage: 
+Depiction: 
+Maintainer: 
+Icon:
+

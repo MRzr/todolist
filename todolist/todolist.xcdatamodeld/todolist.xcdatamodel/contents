@@ -3,13 +3,21 @@
     <entity name="Day" syncable="YES">
         <attribute name="complete" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priority" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Titles" representedClassName="Titles" syncable="YES">
+    <entity name="Month" syncable="YES">
+        <attribute name="complete" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="viewId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priority" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Year" syncable="YES">
+        <attribute name="complete" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priority" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Titles" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="Day" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="Day" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Month" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Year" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>

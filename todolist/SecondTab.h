@@ -1,5 +1,5 @@
 //
-//  SecondTab.h
+//  FirstTab.h
 //  todolist
 //
 //  Created by Matt Razor on 21.02.13.
@@ -8,7 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondTab : UIViewController
-@property (strong, nonatomic) IBOutlet UITabBarItem *SecondTitle;
+@interface SecondTab : UIViewController {
+    UIPopoverController *popoverController;
+}
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *label;
 
+@property (nonatomic, retain) UIPopoverController *popoverController;
+@property (strong, nonatomic) IBOutlet UITableView *table;
+-(void) setTitles;
+
+-(NSInteger) taskCount: (NSString*) sectionIndex;
+- (IBAction)editTable:(id)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
+-(void) check:(UIGestureRecognizer *)sender ;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
+-(void) TabSwitchL:(UIGestureRecognizer *)sender ;
+-(void) TabSwitchR:(UIGestureRecognizer *)sender ;
+-(void)showPopover: (NSString *) identifier fromButton: (UIBarButtonItem *) button;
+
+- (IBAction)addTask:(id)sender;
 @end

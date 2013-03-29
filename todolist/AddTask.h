@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddTask : UIViewController
+@interface AddTask : UIViewController{
+
+    
+}
+
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;
+@property (strong, nonatomic) IBOutlet UIPickerView *pickerView;
+
 @property (strong, nonatomic) IBOutlet UITextField *TaskName;
 
 

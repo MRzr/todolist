@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Fcr-r1-kVj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Fcr-r1-kVj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -7,43 +7,125 @@
         <!--Third Tab - Item-->
         <scene sceneID="tMc-Mu-1P4">
             <objects>
-                <viewController id="7sg-m0-qJZ" customClass="ThirdTab" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BmS-Gn-LFo">
+                <viewController modalTransitionStyle="flipHorizontal" id="7sg-m0-qJZ" customClass="ThirdTab" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e34-82-fBQ">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="oAm-Ei-J4g">
+                                <items>
+                                    <barButtonItem systemItem="add" id="EqF-nI-YKf">
+                                        <connections>
+                                            <action selector="addTask:" destination="7sg-m0-qJZ" id="rRD-I7-HHz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PZV-Sc-oMQ"/>
+                                    <barButtonItem title="This Year" style="plain" id="axH-T8-vvn"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2Wz-fr-tut"/>
+                                    <barButtonItem title="Edit" id="K8b-BB-JsS">
+                                        <connections>
+                                            <action selector="editTable:" destination="7sg-m0-qJZ" id="7lw-Ip-bRu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="90c-0O-w6V">
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7sg-m0-qJZ" id="yux-xg-eDT"/>
+                                    <outlet property="delegate" destination="7sg-m0-qJZ" id="bPq-FQ-02v"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="oAm-Ei-J4g" firstAttribute="trailing" secondItem="e34-82-fBQ" secondAttribute="trailing" type="default" id="4Rb-4t-hEe"/>
+                            <constraint firstItem="90c-0O-w6V" firstAttribute="bottom" secondItem="e34-82-fBQ" secondAttribute="bottom" type="default" id="ElW-Hg-xKu"/>
+                            <constraint firstItem="90c-0O-w6V" firstAttribute="leading" secondItem="e34-82-fBQ" secondAttribute="leading" type="default" id="FeX-1K-Iub"/>
+                            <constraint firstItem="oAm-Ei-J4g" firstAttribute="top" secondItem="e34-82-fBQ" secondAttribute="top" type="default" id="P9F-Ne-7S3"/>
+                            <constraint firstItem="90c-0O-w6V" firstAttribute="top" secondItem="oAm-Ei-J4g" secondAttribute="bottom" type="default" id="PWR-hm-R8t"/>
+                            <constraint firstItem="oAm-Ei-J4g" firstAttribute="leading" secondItem="e34-82-fBQ" secondAttribute="leading" type="default" id="W8c-IF-Sgm"/>
+                            <constraint firstItem="90c-0O-w6V" firstAttribute="trailing" secondItem="e34-82-fBQ" secondAttribute="trailing" type="default" id="ccc-ZX-wYb"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Sb9-FF-xI8"/>
                     <connections>
-                        <outlet property="ThirdTitle" destination="Sb9-FF-xI8" id="a99-oR-hbT"/>
+                        <outlet property="addButton" destination="EqF-nI-YKf" id="e2F-sM-a7Q"/>
+                        <outlet property="editButton" destination="K8b-BB-JsS" id="9Y8-EI-8ff"/>
+                        <outlet property="label" destination="axH-T8-vvn" id="tl2-Md-cfe"/>
+                        <outlet property="table" destination="90c-0O-w6V" id="6Y5-wL-cLu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iip-eo-7fm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="291" y="1097"/>
         </scene>
-        <!--Second Tab - Item 2-->
+        <!--Second Tab - This Month-->
         <scene sceneID="lK8-eH-Jnw">
             <objects>
-                <viewController id="kSd-ex-U28" customClass="SecondTab" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MnP-r1-Eer">
+                <viewController modalTransitionStyle="flipHorizontal" id="kSd-ex-U28" customClass="SecondTab" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SBU-Jc-Ald">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="6o2-0p-dnG">
+                                <items>
+                                    <barButtonItem systemItem="add" id="zao-aY-aB4">
+                                        <connections>
+                                            <action selector="addTask:" destination="kSd-ex-U28" id="ood-53-Hrv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rhP-Wr-WQi"/>
+                                    <barButtonItem title="This Month" style="plain" id="CQu-hh-a7m"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="eJq-OD-dbK"/>
+                                    <barButtonItem title="Edit" id="X4t-Yh-K5J">
+                                        <connections>
+                                            <action selector="editTable:" destination="kSd-ex-U28" id="4NA-u4-LpC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="OJu-lS-HRT">
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kSd-ex-U28" id="M2J-WK-MmB"/>
+                                    <outlet property="delegate" destination="kSd-ex-U28" id="Zx1-1L-Bad"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="OJu-lS-HRT" firstAttribute="leading" secondItem="SBU-Jc-Ald" secondAttribute="leading" type="default" id="6ws-by-0Ky"/>
+                            <constraint firstItem="OJu-lS-HRT" firstAttribute="bottom" secondItem="SBU-Jc-Ald" secondAttribute="bottom" type="default" id="Hid-ic-GAM"/>
+                            <constraint firstItem="OJu-lS-HRT" firstAttribute="trailing" secondItem="SBU-Jc-Ald" secondAttribute="trailing" type="default" id="Ouw-DM-gMI"/>
+                            <constraint firstItem="OJu-lS-HRT" firstAttribute="top" secondItem="6o2-0p-dnG" secondAttribute="bottom" type="default" id="UMD-0t-hHt"/>
+                            <constraint firstItem="6o2-0p-dnG" firstAttribute="top" secondItem="SBU-Jc-Ald" secondAttribute="top" type="default" id="mex-Ge-2i9"/>
+                            <constraint firstItem="6o2-0p-dnG" firstAttribute="trailing" secondItem="SBU-Jc-Ald" secondAttribute="trailing" type="default" id="pQh-PL-5cd"/>
+                            <constraint firstItem="6o2-0p-dnG" firstAttribute="leading" secondItem="SBU-Jc-Ald" secondAttribute="leading" type="default" id="ysq-cc-6L9"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="UIv-O8-jS8"/>
+                    <tabBarItem key="tabBarItem" title="This Month" id="UIv-O8-jS8"/>
                     <connections>
-                        <outlet property="SecondTitle" destination="UIv-O8-jS8" id="AZQ-7e-d6A"/>
+                        <outlet property="addButton" destination="zao-aY-aB4" id="yby-Jg-EiN"/>
+                        <outlet property="editButton" destination="X4t-Yh-K5J" id="2p6-x4-Bwf"/>
+                        <outlet property="label" destination="CQu-hh-a7m" id="lgu-ya-gic"/>
+                        <outlet property="table" destination="OJu-lS-HRT" id="MrC-wd-K6x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LtK-re-yk0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308" y="-74"/>
+            <point key="canvasLocation" x="328" y="-122"/>
         </scene>
         <!--First Tab - Today-->
         <scene sceneID="K3f-j1-KBH">
             <objects>
-                <viewController title="Today" id="OuT-9N-qyZ" customClass="FirstTab" sceneMemberID="viewController">
+                <viewController title="Today" modalTransitionStyle="flipHorizontal" id="OuT-9N-qyZ" customClass="FirstTab" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F6g-45-gKI">
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -52,9 +134,11 @@
                                 <items>
                                     <barButtonItem systemItem="add" id="aXu-qC-9by">
                                         <connections>
-                                            <segue destination="kc7-Dq-1dx" kind="modal" id="A2a-Ei-JqE"/>
+                                            <action selector="addTask:" destination="OuT-9N-qyZ" id="r8F-Cj-Yw9"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Xdw-e8-yuX"/>
+                                    <barButtonItem title="Today" style="plain" id="2Tj-Cr-gS8"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="w9r-e1-1x7"/>
                                     <barButtonItem title="Edit" id="Ry9-r1-XRC">
                                         <connections>
@@ -63,11 +147,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4o-ls-y8M">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="KwP-GX-aDh">
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <gestureRecognizers/>
@@ -81,9 +160,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="gjK-jC-t7E" firstAttribute="centerX" secondItem="W4o-ls-y8M" secondAttribute="centerX" type="default" id="9al-8z-SON"/>
                             <constraint firstItem="KwP-GX-aDh" firstAttribute="top" secondItem="gjK-jC-t7E" secondAttribute="bottom" type="default" id="BEj-Sw-4N3"/>
-                            <constraint firstItem="W4o-ls-y8M" firstAttribute="top" secondItem="F6g-45-gKI" secondAttribute="top" constant="11" id="CRs-AD-mue"/>
                             <constraint firstItem="gjK-jC-t7E" firstAttribute="leading" secondItem="F6g-45-gKI" secondAttribute="leading" type="default" id="LaQ-Em-ne9"/>
                             <constraint firstItem="gjK-jC-t7E" firstAttribute="top" secondItem="F6g-45-gKI" secondAttribute="top" type="default" id="Shi-sa-ZpQ"/>
                             <constraint firstItem="KwP-GX-aDh" firstAttribute="leading" secondItem="F6g-45-gKI" secondAttribute="leading" type="default" id="bSZ-xC-S06"/>
@@ -94,8 +171,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Vxi-0I-jsa"/>
                     <connections>
+                        <outlet property="addButton" destination="aXu-qC-9by" id="kOX-Dj-g9L"/>
                         <outlet property="editButton" destination="Ry9-r1-XRC" id="hk1-XW-M6b"/>
-                        <outlet property="label" destination="W4o-ls-y8M" id="VvW-d9-sbT"/>
+                        <outlet property="label" destination="2Tj-Cr-gS8" id="mzN-Mp-3V1"/>
                         <outlet property="table" destination="KwP-GX-aDh" id="uLi-p2-kdB"/>
                     </connections>
                 </viewController>
@@ -103,12 +181,82 @@
             </objects>
             <point key="canvasLocation" x="322" y="-1247"/>
         </scene>
+        <!--Clear Task-->
+        <scene sceneID="gqB-Ie-gYY">
+            <objects>
+                <viewController storyboardIdentifier="ClearTask" id="tQ5-ma-I6F" customClass="ClearTask" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RJh-HD-Ar3">
+                        <rect key="frame" x="0.0" y="0.0" width="220" height="60"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Clear" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA9-vf-a9m">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="dC7-3Y-ZmL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpb-1J-xJq">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="y3p-if-xbh"/>
+                                    <constraint firstAttribute="width" constant="100" id="zmF-zp-bza"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done tasks">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="done:" destination="tQ5-ma-I6F" eventType="touchUpInside" id="D9v-qq-hvX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQJ-t0-dD0">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Oyx-pu-aW3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="All tasks">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="all:" destination="tQ5-ma-I6F" eventType="touchUpInside" id="YdO-nE-IhC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="lQJ-t0-dD0" firstAttribute="leading" secondItem="RJh-HD-Ar3" secondAttribute="leading" constant="114" id="GBS-V6-w74"/>
+                            <constraint firstItem="gpb-1J-xJq" firstAttribute="leading" secondItem="RJh-HD-Ar3" secondAttribute="leading" constant="9" id="KuL-iE-O7v"/>
+                            <constraint firstItem="gpb-1J-xJq" firstAttribute="top" secondItem="RJh-HD-Ar3" secondAttribute="top" constant="25" id="csU-1R-JeR"/>
+                            <constraint firstItem="lQJ-t0-dD0" firstAttribute="top" secondItem="gpb-1J-xJq" secondAttribute="top" type="default" id="emc-rj-9uu"/>
+                            <constraint firstItem="cA9-vf-a9m" firstAttribute="top" secondItem="RJh-HD-Ar3" secondAttribute="top" type="default" id="m1Z-0P-7XX"/>
+                            <constraint firstItem="cA9-vf-a9m" firstAttribute="centerX" secondItem="RJh-HD-Ar3" secondAttribute="centerX" type="default" id="w0u-Vv-U2a"/>
+                            <constraint firstItem="lQJ-t0-dD0" firstAttribute="bottom" secondItem="gpb-1J-xJq" secondAttribute="bottom" type="default" id="yEx-mP-XX3"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Chd-Mp-peV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="948" y="-1452"/>
+        </scene>
         <!--Add Task-->
         <scene sceneID="6lq-mX-nSg">
             <objects>
-                <viewController id="kc7-Dq-1dx" customClass="AddTask" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mFL-1A-Jih">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                <viewController storyboardIdentifier="AddTask" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kc7-Dq-1dx" customClass="AddTask" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFill" id="mFL-1A-Jih">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="bxv-HF-w6F">
@@ -118,6 +266,8 @@
                                             <action selector="done:" destination="kc7-Dq-1dx" id="UpL-Wv-r50"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="pMm-EZ-ynh"/>
+                                    <barButtonItem title="Add Task" style="plain" id="5Gj-OH-5s2"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Nkw-Ze-EUN"/>
                                     <barButtonItem systemItem="cancel" id="PBA-3n-CDP">
                                         <connections>
@@ -126,41 +276,48 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Add Task" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yua-7k-gxS">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bgj-aM-AN9">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14l-Ec-u8K">
+                                <connections>
+                                    <outlet property="dataSource" destination="kc7-Dq-1dx" id="Bog-ZV-w4X"/>
+                                    <outlet property="delegate" destination="kc7-Dq-1dx" id="icg-Og-Ljr"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Yua-7k-gxS" firstAttribute="top" secondItem="mFL-1A-Jih" secondAttribute="top" constant="11" id="2Tw-7O-lPX"/>
-                            <constraint firstItem="bgj-aM-AN9" firstAttribute="top" secondItem="mFL-1A-Jih" secondAttribute="top" constant="70" id="8Dq-dG-tR4"/>
-                            <constraint firstAttribute="trailing" secondItem="bgj-aM-AN9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Drs-dA-Hti"/>
-                            <constraint firstItem="bxv-HF-w6F" firstAttribute="trailing" secondItem="mFL-1A-Jih" secondAttribute="trailing" type="default" id="ZrC-0O-HwK"/>
-                            <constraint firstItem="bxv-HF-w6F" firstAttribute="top" secondItem="mFL-1A-Jih" secondAttribute="top" type="default" id="q27-83-hJy"/>
+                            <constraint firstItem="bxv-HF-w6F" firstAttribute="leading" secondItem="mFL-1A-Jih" secondAttribute="leading" type="default" id="1YK-0b-rbd"/>
+                            <constraint firstItem="bxv-HF-w6F" firstAttribute="top" secondItem="mFL-1A-Jih" secondAttribute="top" type="default" id="Aza-Jg-JdF"/>
+                            <constraint firstItem="bgj-aM-AN9" firstAttribute="top" secondItem="mFL-1A-Jih" secondAttribute="top" constant="59" id="B25-5i-dzH"/>
+                            <constraint firstItem="14l-Ec-u8K" firstAttribute="trailing" secondItem="mFL-1A-Jih" secondAttribute="trailing" type="default" id="BrO-qa-N7T"/>
+                            <constraint firstItem="14l-Ec-u8K" firstAttribute="leading" secondItem="mFL-1A-Jih" secondAttribute="leading" type="default" id="JIa-YT-hmg"/>
+                            <constraint firstAttribute="trailing" secondItem="bgj-aM-AN9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="RbF-if-wV6"/>
+                            <constraint firstItem="14l-Ec-u8K" firstAttribute="bottom" secondItem="mFL-1A-Jih" secondAttribute="bottom" type="default" id="UVR-dC-Jaz"/>
+                            <constraint firstItem="bxv-HF-w6F" firstAttribute="trailing" secondItem="mFL-1A-Jih" secondAttribute="trailing" type="default" id="jaa-To-odS"/>
                             <constraint firstItem="bgj-aM-AN9" firstAttribute="leading" secondItem="mFL-1A-Jih" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="uCi-PS-TNL"/>
-                            <constraint firstItem="bxv-HF-w6F" firstAttribute="leading" secondItem="mFL-1A-Jih" secondAttribute="leading" type="default" id="vqI-Vu-RNX"/>
-                            <constraint firstItem="Yua-7k-gxS" firstAttribute="centerX" secondItem="bxv-HF-w6F" secondAttribute="centerX" type="default" id="yf3-B6-6GQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pDe-f0-Sr4"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="TaskName" destination="bgj-aM-AN9" id="JRC-yh-JC5"/>
+                        <outlet property="pickerView" destination="14l-Ec-u8K" id="otI-f9-i0F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEU-hd-G4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="-1827"/>
+            <point key="canvasLocation" x="981" y="-1885"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="F1x-VW-JaN">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="Fcr-r1-kVj" sceneMemberID="viewController">
+                <tabBarController definesPresentationContext="YES" modalTransitionStyle="flipHorizontal" id="Fcr-r1-kVj" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ZDU-LE-bb3"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="KJx-h7-9c3">
@@ -170,7 +327,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="OuT-9N-qyZ" kind="relationship" relationship="viewControllers" id="epO-Ep-5RX"/>
-                        <segue destination="kSd-ex-U28" kind="relationship" relationship="viewControllers" id="WDK-WB-8Wm"/>
+                        <segue destination="kSd-ex-U28" kind="relationship" relationship="viewControllers" id="He4-kr-kB5"/>
                         <segue destination="7sg-m0-qJZ" kind="relationship" relationship="viewControllers" id="kUw-lj-qhb"/>
                     </connections>
                 </tabBarController>
@@ -186,14 +343,24 @@
                 <relationship kind="action" name="cancel:"/>
                 <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="TaskName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="ClearTask" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClearTask.h"/>
+            <relationships>
+                <relationship kind="action" name="all:"/>
+                <relationship kind="action" name="done:"/>
             </relationships>
         </class>
         <class className="FirstTab" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstTab.h"/>
             <relationships>
+                <relationship kind="action" name="addTask:"/>
                 <relationship kind="action" name="editTable:"/>
+                <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="label" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="table" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -203,13 +370,22 @@
         <class className="SecondTab" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondTab.h"/>
             <relationships>
-                <relationship kind="outlet" name="SecondTitle" candidateClass="UITabBarItem"/>
+                <relationship kind="action" name="addTask:"/>
+                <relationship kind="action" name="editTable:"/>
+                <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="label" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="table" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="ThirdTab" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ThirdTab.h"/>
             <relationships>
-                <relationship kind="outlet" name="ThirdTitle" candidateClass="UITabBarItem"/>
+                <relationship kind="action" name="addTask:"/>
+                <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="label" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="table" candidateClass="UITableView"/>
             </relationships>
         </class>
     </classes>

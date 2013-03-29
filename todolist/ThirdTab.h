@@ -1,5 +1,5 @@
 //
-//  ThirdTab.h
+//  FirstTab.h
 //  todolist
 //
 //  Created by Matt Razor on 21.02.13.
@@ -8,7 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThirdTab : UIViewController
-@property (strong, nonatomic) IBOutlet UITabBarItem *ThirdTitle;
+@interface ThirdTab : UIViewController {
+    UIPopoverController *popoverController;
+}
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *label;
 
+@property (nonatomic, retain) UIPopoverController *popoverController;
+@property (strong, nonatomic) IBOutlet UITableView *table;
+-(void) setTitles;
+
+
+-(NSInteger) taskCount: (NSString*) sectionIndex;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
+-(void) check:(UIGestureRecognizer *)sender ;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
+-(void) TabSwitch:(UIGestureRecognizer *)sender ;
+-(void)showPopover: (NSString *) identifier fromButton: (UIBarButtonItem *) button;
+
+- (IBAction)addTask:(id)sender;
 @end
